@@ -4,12 +4,15 @@ import { useState } from "react"
 
 const Characters = () =>{
 
-    const[pageNo, setPageNo] = useState(1)
+    const[pageNo, setPageNo] = useState(41)
     const fetchCharacters = async ({queryKey}) =>{
-        const response = await fetch(`https://rickandmortyapi.com/api/character?page=${queryKey}`)
+        const response = await fetch(`https://rickandmortyapi.com/api/character?page=${queryKey[1]}`)
         return response.json()
     }
-    const {data, status} = useQuery(["characters", pageNo] , fetchCharacters)
+    const {data, status , isPreviousData} = useQuery(["characters", pageNo] , fetchCharacters , {
+        keepPreviousData : true
+
+    })
 
     console.log(data);
 
@@ -32,7 +35,7 @@ const Characters = () =>{
                 )
             })}
             <button disabled={pageNo === 1} onClick={()=> setPageNo(prevCount => prevCount-1)}>Previous</button>
-            <button onClick={() => setPageNo(prevCount => prevCount+1)}>Next</button>
+            <button disabled = {isPreviousData && !data.info.next} onClick={() => setPageNo(prevCount => prevCount+1)}>Next</button>
             </div>
     )
 }
