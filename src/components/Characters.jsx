@@ -25,7 +25,7 @@ const Characters = () =>{
     }
 
     return(  
-        <div>
+        <div className="container">
             <h2>Page no : {pageNo}</h2>
             {data.results.map(character =>{
                 return(
