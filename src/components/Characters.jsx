@@ -4,7 +4,7 @@ import { useState } from "react"
 
 const Characters = () =>{
 
-    const[pageNo, setPageNo] = useState(41)
+    const[pageNo, setPageNo] = useState(1)
     const fetchCharacters = async ({queryKey}) =>{
         const response = await fetch(`https://rickandmortyapi.com/api/character?page=${queryKey[1]}`)
         return response.json()
