@@ -1,4 +1,5 @@
 import { useQuery } from "@tanstack/react-query"
+import Character from "./Character"
 
 const Characters = () =>{
 
@@ -23,9 +24,9 @@ const Characters = () =>{
         {
             data.results.map(character =>{
                 return(
-                <div key={character.id}>
-                <h2>{character.name}</h2>
-                </div>
+                    <div key={character.id}>
+                <Character character={character}/>
+                    </div>
                 )
             })
         }

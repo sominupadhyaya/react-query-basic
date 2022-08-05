@@ -10,6 +10,7 @@ const App = () => {
   const queryClient = new QueryClient()
   return (
     <div className="App">
+      <h1>Rick and Morty</h1>
     <QueryClientProvider client={queryClient}>
       <Characters/>
       </QueryClientProvider>      
