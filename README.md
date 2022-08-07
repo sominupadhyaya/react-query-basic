@@ -10,3 +10,5 @@ to make the app smoother**
 - React (javascript)
 
 - React Query
+
+- Rick and Morty API (https://rickandmortyapi.com/api/character) for character info and pictureshttps://rickandmortyapi.com/api/character
